@@ -68,25 +68,7 @@ defined('TYPO3') || die('Access denied.');
 					}
 				}
 			'));
-			$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-
-			$iconRegistry->registerIcon(
-				'jobapplications-plugin-frontend',
-				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-				['source' => 'EXT:jobapplications/Resources/Public/Icons/logo_jobs.svg']
-			);
-
-			$iconRegistry->registerIcon(
-				'jobapplications-plugin-detailview',
-				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-				['source' => 'EXT:jobapplications/Resources/Public/Icons/logo_jobs.svg']
-			);
-
-			$iconRegistry->registerIcon(
-				'jobapplications-plugin-applicationform',
-				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-				['source' => 'EXT:jobapplications/Resources/Public/Icons/logo_jobs.svg']
-			);
+			// Icons: registered via Configuration/Icons.php (TYPO3 v13+)
 
 			$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['jobapplications'] = \ITX\Jobapplications\Hooks\TCEmainHook::class;
 			$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass']['jobapplications'] = \ITX\Jobapplications\Hooks\TCEmainHook::class;
