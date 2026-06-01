@@ -19,7 +19,7 @@ class ConstraintViewHelper extends AbstractViewHelper
 {
 	protected static array $reflectionCache = [];
 
-	public function initializeArguments()
+	public function initializeArguments(): void
 	{
 		parent::initializeArguments();
 		$this->registerArgument('page', 'string', 'ViewHelper page', true);

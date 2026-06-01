@@ -133,7 +133,7 @@
 		/**
 		 * @return void
 		 */
-		public function initializeArguments()
+		public function initializeArguments(): void
 		{
 			parent::initializeArguments();
 			$this->registerArgument('postings', 'array', 'The postings to group', true);

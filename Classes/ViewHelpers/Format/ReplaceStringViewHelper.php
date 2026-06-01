@@ -15,7 +15,7 @@
 
 	class ReplaceStringViewHelper extends AbstractViewHelper
 	{
-		public function initializeArguments() {
+		public function initializeArguments(): void {
 			parent::initializeArguments();
 			$this->registerArgument('substring', 'string', 'View helper substring ', TRUE);
 			$this->registerArgument('content', 'string', 'View helper content', TRUE);
