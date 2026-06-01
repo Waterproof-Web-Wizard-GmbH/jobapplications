@@ -58,66 +58,7 @@ defined('TYPO3') || die('Access denied.');
 				]
 			);
 
-			// wizards
-			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-				'mod {
-                wizards.newContentElement.wizardItems.plugins {
-                    elements {
-                        frontend {
-                            iconIdentifier = jobapplications-plugin-frontend
-                            title = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_frontend.name
-                            description = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_frontend.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = jobapplications_frontend
-                            }
-                        }
-
-                        detailview {
-                            iconIdentifier = jobapplications-plugin-frontend
-                            title = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_detailview.name
-                            description = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_detailview.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = jobapplications_detailview
-                            }
-                        }
-
-
-                        contactdisplay {
-                            iconIdentifier = jobapplications-plugin-frontend
-                            title = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_contactdisplay.name
-                            description = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_contactdisplay.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = jobapplications_contactdisplay
-                            }
-                        }
-
-                        successpage {
-                            iconIdentifier = jobapplications-plugin-frontend
-                            title = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_successpage.name
-                            description = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_successpage.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = jobapplications_successpage
-                            }
-                        }
-
-                        applicationform {
-                            iconIdentifier = jobapplications-plugin-frontend
-                            title = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_applicationform.name
-                            description = LLL:EXT:jobapplications/Resources/Private/Language/locallang_db.xlf:tx_jobapplications_applicationform.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = jobapplications_applicationform
-                            }
-                        }
-                    }
-
-                    show = *
-           		}'
-			);
+			// wizards: registered via Configuration/page.tsconfig (auto-loaded in TYPO3 v13+)
 			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(trim('
     			config.pageTitleProviders {
         			own {
