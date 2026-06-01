@@ -24,7 +24,7 @@
 	"require" : {
 		"php" : ">=8.2",
 		"ext-openssl" : "*",
-		"typo3/cms-core" : "^13"
+		"typo3/cms-core" : "^13 || ^14"
 	},
 	"require-dev" : {
 		"phpstan/phpstan" : "^1.4",
