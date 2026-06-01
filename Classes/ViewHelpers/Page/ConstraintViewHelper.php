@@ -5,7 +5,6 @@ namespace ITX\Jobapplications\ViewHelpers\Page;
 use ITX\Jobapplications\Domain\Model\Constraint;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * This file is part of the ITX\jobapplications project under GPLv2 or later.
