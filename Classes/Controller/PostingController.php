@@ -105,6 +105,15 @@
 			{
 				$view->assign('pageData', $GLOBALS['TSFE']->page);
 			}
+
+			// Assign the tt_content record of the rendering plugin so templates
+			// can output editorial fields (subheader/header/bodytext) — same
+			// pattern as georgringer/news NewsBaseController.
+			$contentObject = $this->request->getAttribute('currentContentObject');
+			if ($contentObject !== null)
+			{
+				$view->assign('contentObjectData', $contentObject->data);
+			}
 		}
 
 		/**
