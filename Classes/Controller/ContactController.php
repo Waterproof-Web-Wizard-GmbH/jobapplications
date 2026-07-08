@@ -47,9 +47,13 @@
 		 */
 		public function initializeView(ViewInterface $view): void
         {
-			if (is_object($GLOBALS['TSFE']))
+			// TYPO3 v14: $GLOBALS['TSFE'] is being removed. Prefer the request
+			// attribute; isset() avoids the "Undefined global variable" warning
+			// (which the Development-context error handler turns into a 500).
+			$pageInformation = $this->request->getAttribute('frontend.page.information');
+			if ($pageInformation !== null)
 			{
-				$view->assign('pageData', $GLOBALS['TSFE']->page);
+				$view->assign('pageData', $pageInformation->getPageRecord());
 			}
 		}
 
