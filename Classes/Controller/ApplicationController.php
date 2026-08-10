@@ -55,6 +55,7 @@
 	use TYPO3\CMS\Core\Resource\FileInterface;
 	use TYPO3\CMS\Core\Resource\ResourceStorageInterface;
 	use TYPO3\CMS\Core\Resource\StorageRepository;
+	use TYPO3\CMS\Core\Routing\PageArguments;
     use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
     use TYPO3\CMS\Core\Utility\GeneralUtility;
 	use TYPO3\CMS\Core\Utility\MailUtility;
@@ -187,7 +188,17 @@
 		public function newAction(Posting $posting = null): ResponseInterface
 		{
 			// Getting posting when Detailview and applicationform are on the same page.
+			// Since TYPO3 v13, arguments resolved by route enhancers (speaking URLs) are no
+			// longer mirrored into $_GET, so read them from the routing attribute as well.
 			$parameters = $_GET["tx_jobapplications_detailview"] ?? [];
+			if (empty($parameters['posting']))
+			{
+				$pageArguments = $this->request->getAttribute('routing');
+				if ($pageArguments instanceof PageArguments)
+				{
+					$parameters = $pageArguments->getArguments()['tx_jobapplications_detailview'] ?? $parameters;
+				}
+			}
 			if ($posting === null && !empty($parameters) && !empty($parameters['posting']) && MathUtility::canBeInterpretedAsInteger($parameters['posting']))
 			{
 				$postingUid = (int)$parameters['posting'];
